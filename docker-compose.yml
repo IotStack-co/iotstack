@@ -38,7 +38,7 @@ services:
   influxdb:
     image: influxdb
     container_name: influxdb
-    env_file: certbot.env
+    env_file: iotstack.env
     volumes:
       - influxdb_data:/var/lib/influxdb
     networks:
@@ -79,7 +79,7 @@ services:
     container_name: telegraf
     links:
       - influxdb
-    env_file: certbot.env
+    env_file: iotstack.env
     volumes:
       - ./telegraf/telegraf.toml:/etc/telegraf/telegraf.conf:ro
     networks:
@@ -90,7 +90,7 @@ services:
   grafana:
     image: grafana/grafana
     container_name: grafana
-    env_file: certbot.env
+    env_file: iotstack.env
     user: "472"
     links:
       - influxdb
