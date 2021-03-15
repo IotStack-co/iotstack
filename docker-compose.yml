@@ -36,7 +36,7 @@ services:
       - "traefik.http.routers.api-router=api-router@file"
       - "traefik.http.routers.traefik-http-router.service=api@internal"
   influxdb:
-    image: influxdb
+    image: influxdb:1.8
     container_name: influxdb
     env_file: iotstack.env
     volumes:
@@ -95,7 +95,7 @@ services:
       - "traefik.http.routers.cedalo-router.service=cedalo@file"
 
   telegraf:
-    image: telegraf
+    image: telegraf:1.16
     container_name: telegraf
     links:
       - influxdb
@@ -108,7 +108,7 @@ services:
       - "traefik.enable=false"
 
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:7.1.0
     container_name: grafana
     env_file: iotstack.env
     user: "472"
