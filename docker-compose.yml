@@ -49,7 +49,7 @@ services:
       - "traefik.http.routers.influxdb-router.service=influxdb@file"
 
   mosquitto:
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:2-openssl
     container_name: mosquitto
     volumes:
       - ./mosquitto/config:/mosquitto/config
@@ -73,6 +73,26 @@ services:
       # TCP Services for MQTT and Websockets
       - "traefik.tcp.services.mosquitto=mosquitto@file"
       - "traefik.http.services.mosquitto-ws=mosquitto-ws@file"
+
+  cedalo:
+    image: cedalo/management-center:2
+    container_name: cedalo
+    expose:
+      - 8088
+    depends_on:
+      - mosquitto
+    networks:
+      - "iotstack"
+    environment:
+      CEDALO_MC_BROKER_ID: mosquitto-2.0
+      CEDALO_MC_BROKER_NAME: Mosquitto 2.0
+      CEDALO_MC_BROKER_URL: mqtt://mosquitto:8883
+      CEDALO_MC_BROKER_USERNAME: cedalo
+      CEDALO_MC_BROKER_PASSWORD: Ps0fH0I5Fp
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cedalo-router=cedalo-router@file"
+      - "traefik.http.routers.cedalo-router.service=cedalo@file"
 
   telegraf:
     image: telegraf

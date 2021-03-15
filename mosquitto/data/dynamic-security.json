@@ -1,0 +1,128 @@
+{
+	"defaultACLAccess":	{
+		"publishClientSend":	false,
+		"publishClientReceive":	true,
+		"subscribe":	false,
+		"unsubscribe":	true
+	},
+	"clients":	[{
+			"username":	"abc",
+			"clientid":	"abc",
+			"textname":	"",
+			"textdescription":	"",
+			"roles":	[{
+					"rolename":	"test"
+				}],
+			"password":	"+TcBfVKMhR5khXS0UuhBdJwdci4yvBwffWXg1rU7FEtkKNpHZLU+m7Ymnj9PYkDn+Hnq7fRppc8Vhwhj7G0PAA==",
+			"salt":	"zzjcEWKG3SQqwkSy",
+			"iterations":	101
+		}, {
+			"username":	"cedalo",
+			"textname":	"Dynsec admin user",
+			"roles":	[{
+					"rolename":	"admin"
+				}],
+			"password":	"TT9vA1TzbNYvYlF1T/nMIKrqGxAI/QLp6V8+H5heolMkz5E44f5FQLKFMuXFQyuzp55NMiDeIEqk0qwDH7bVZw==",
+			"salt":	"RR3B0XGwu86JyQOy",
+			"iterations":	101
+		}, {
+			"username":	"test",
+			"clientid":	"165763f29f694651883e4b38eb31beb2",
+			"textname":	"Testuser",
+			"textdescription":	"",
+			"roles":	[{
+					"rolename":	"test"
+				}],
+			"password":	"QLOSy3WjRsHdFaYqyypIgNw7lNxtEzeta4PLXZe1eDGXT9s6Sku6eoWBH0LMoAfqsIYWUjElC10QA6GeHZHeYg==",
+			"salt":	"ZgLXvPqCxhH27Bjc",
+			"iterations":	101
+		}],
+	"groups":	[],
+	"roles":	[{
+			"rolename":	"admin",
+			"acls":	[{
+					"acltype":	"publishClientSend",
+					"topic":	"$CONTROL/dynamic-security/#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"publishClientReceive",
+					"topic":	"$CONTROL/dynamic-security/#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"publishClientReceive",
+					"topic":	"$SYS/#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"publishClientReceive",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"subscribePattern",
+					"topic":	"$CONTROL/dynamic-security/#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"subscribePattern",
+					"topic":	"$SYS/#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"subscribePattern",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"unsubscribePattern",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}]
+		}, {
+			"rolename":	"client",
+			"acls":	[{
+					"acltype":	"publishClientSend",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"publishClientReceive",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"subscribePattern",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"unsubscribePattern",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}]
+		}, {
+			"rolename":	"test",
+			"textname":	"Test",
+			"textdescription":	"Test",
+			"acls":	[{
+					"acltype":	"publishClientSend",
+					"topic":	"sfsf",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"publishClientReceive",
+					"topic":	"sfsf",
+					"priority":	0,
+					"allow":	true
+				}, {
+					"acltype":	"subscribePattern",
+					"topic":	"#",
+					"priority":	0,
+					"allow":	true
+				}]
+		}]
+}
