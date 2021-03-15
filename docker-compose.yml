@@ -12,7 +12,6 @@ services:
       - "80:80"
       # HTTPS
       - "443:443"
-      - "8088:8088"
       # MQTT
       - "8883:8883"
     depends_on:
@@ -75,7 +74,7 @@ services:
       - "traefik.http.services.mosquitto-ws=mosquitto-ws@file"
 
   cedalo:
-    image: cedalo/management-center:2
+    image: marcolewandowski/mqtt-management-server:dev
     container_name: cedalo
     expose:
       - 8088
