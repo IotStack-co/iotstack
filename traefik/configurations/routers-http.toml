@@ -20,7 +20,7 @@
 
         [http.routers.cedalo-router]
             rule = "Host(`mqttadmin.demo1.iotstack.co`)"
-            entryPoints = ["web-secure"]
+            entryPoints = ["web-secure2"]
             middlewares = ["user-auth"]
             service = "cedalo"
 
