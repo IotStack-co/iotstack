@@ -42,6 +42,10 @@
 
     [entryPoints.web-secure2]
         address = ":8088"
+        [entryPoints.web-secure2.redirections]
+            [entryPoints.web-secure2.redirections.entryPoint]
+                to = "web-secure2"
+                scheme = "https"
         
     [entryPoints.mqtt]
         address = ":8883"
