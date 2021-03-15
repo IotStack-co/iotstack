@@ -44,7 +44,7 @@
         address = ":8088"
         [entryPoints.web-secure2.redirections]
             [entryPoints.web-secure2.redirections.entryPoint]
-                to = "web-secure2"
+                to = "web-secure"
                 scheme = "https"
         
     [entryPoints.mqtt]
