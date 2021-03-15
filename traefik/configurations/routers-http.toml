@@ -20,12 +20,9 @@
 
         [http.routers.cedalo-router]
             rule = "Host(`mqttadmin.demo1.iotstack.co`)"
-            entryPoints = ["web-secure"]
+            entryPoints = ["web2"]
             middlewares = ["user-auth"]
             service = "cedalo"
-
-            [http.routers.cedalo-router.tls]
-                certResolver = "myresolver"
         
         [http.routers.influxdb-router]
             rule = "Host(`influxdb.demo1.iotstack.co`)"
