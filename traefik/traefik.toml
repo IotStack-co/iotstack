@@ -39,6 +39,9 @@
 
     [entryPoints.web-secure]
         address = ":443"
+
+    [entryPoints.web-secure2]
+        address = ":8088"
         
     [entryPoints.mqtt]
         address = ":8883"
