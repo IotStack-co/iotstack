@@ -56,7 +56,6 @@ services:
     user: "${USER_ID}:${GRP_ID}"
     expose:
       - 1883
-      - 8883
     ports: 
       - "8883:8883"
     links:
