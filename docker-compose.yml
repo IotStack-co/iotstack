@@ -52,6 +52,7 @@ services:
     container_name: mosquitto
     volumes:
       - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/certs:/mosquitto/certs
       - ./mosquitto/log:/mosquitto/log
       - ./mosquitto/data:/mosquitto/data
     user: "${USER_ID}:${GRP_ID}"
